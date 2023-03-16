@@ -14,6 +14,11 @@ function playSound(key) {
   if (sounds[key]) {
     sounds[key].currentTime = 0;
     sounds[key].play();
+    const button = document.querySelector(`.${key}`);
+    button.classList.add("pressed");
+    setTimeout(() => {
+      button.classList.remove("pressed");
+    }, 100);
   }
 }
 
